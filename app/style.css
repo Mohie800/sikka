@@ -1,0 +1,134 @@
+.home-split-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+}
+
+.war-container-relaxed,
+.rev-container-relaxed {
+  background: url(./war.jpg);
+  background-size: cover;
+  cursor: pointer;
+  transition: width 0.5s ease-in-out; /* Add transition */
+}
+
+.rev-container-relaxed {
+  background: url(./rev.jpg);
+  background-size: cover;
+  cursor: pointer;
+}
+
+.home-split-logo-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  transition: left 0.5s ease-in-out; /* Add transition */
+}
+
+.home-split-logo {
+  width: 100%;
+  height: 100%;
+}
+
+.home-war-content {
+  object-fit: cover;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4rem;
+  background: url(./war.jpg);
+  background-size: cover;
+}
+.home-rev-content {
+  background: url(./rev.jpg);
+  object-fit: cover;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4rem;
+  background-size: cover;
+}
+
+.home-war-text {
+  margin: 0 10%;
+  background: #ffffff3d;
+  padding: 1rem;
+  text-align: center;
+  font-size: 26px;
+}
+
+.home-split-btn {
+  background: white;
+  color: black;
+}
+
+.decline-text {
+  background-color: aliceblue;
+  padding: 10px 20px !important;
+  border-radius: 4px !important;
+}
+
+.accept-btn {
+  background-color: rgb(48, 181, 48) !important;
+  padding: 10px 20px !important;
+  color: white !important;
+  border-radius: 4px !important;
+}
+
+.cookies-privacy-a-tag{
+  text-decoration: underline;
+}
+
+
+.cookies-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: 35rem; /* Adjust as needed */
+  z-index: 1111;
+}
+
+.settings-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+
+@media screen and (max-width: 600px) {
+  .home-split-container {
+    flex-direction: column;
+  }
+  .home-split-logo {
+    width: 100%;
+    height: 100%;
+  }
+  .home-split-logo-container {
+    transform: translate(-50%, -50%);
+    transition: top 0.5s ease-in-out; /* Add transition */
+  }
+  .war-container-relaxed,
+  .rev-container-relaxed {
+    transition: height 0.5s ease-in-out; /* Add transition */
+  }
+}

@@ -1,0 +1,192 @@
+.article-sub-id-container {
+  display: flex;
+  flex-direction: column;
+  /* padding: 10% 0 0 0; */
+}
+.articles-sub-id-hero-container {
+  width: 100%;
+  height: 50vh;
+}
+.articles-sub-id-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.articles-sub-id-hero-text-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.articles-sub-id-text-container {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 23rem 10rem 23rem;
+}
+.article-audio-player {
+  width: 50%;
+}
+.articles-audio-label {
+  color: black;
+  font-weight: 500;
+}
+.article-header {
+  font-size: 42px;
+  font-weight: 900;
+  color: black;
+}
+
+.article-auther-name {
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0.9;
+  color: black;
+}
+.article-category {
+  font-size: 15px;
+  font-weight: 300;
+  opacity: 0.8;
+  letter-spacing: 3px;
+  color: black;
+}
+
+.articles-sub-id-text {
+  font-size: 20px;
+  font-weight: 500;
+  color: black;
+  text-align: justify;
+}
+
+.articles-sub-id-audio-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 1rem;
+}
+
+.articles-sub-id-img-title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 23rem 1rem 23rem;
+  background-color: white;
+}
+
+.audio-player-article {
+  width: 90%;
+}
+
+audio::-webkit-media-controls-panel {
+  background-color: rgb(230, 227, 227);
+}
+
+audio::-webkit-media-controls-mute-button {
+  background-color: #c6c9d2;
+}
+
+audio::-webkit-media-controls-play-button {
+  background-color: #5255c8;
+  border-radius: 10%;
+}
+
+audio::-webkit-media-controls-current-time-display {
+  color: black;
+  text-shadow: none;
+}
+audio::-webkit-media-controls-time-remaining-display {
+  color: black;
+  text-shadow: none;
+}
+
+audio::-webkit-media-controls-enclosure {
+  border-radius: 4px;
+}
+
+.articles-share-icon-container {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.articles-share-icon {
+  background-color: #fdfdfd;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 90%;
+  width: 90%;
+  padding: 10px;
+  border: 1px solid lightgrey;
+}
+
+.share-icons-container {
+  display: flex;
+  padding: 3px;
+  gap: 2rem;
+  cursor: pointer;
+}
+.share-icons-container:hover {
+  background-color: #ececec;
+}
+
+@media screen and (max-width: 600px) {
+  .article-audio-player {
+    width: 100%;
+  }
+  .articles-sub-id-hero-img {
+    height: 60%;
+  }
+  .article-header {
+    font-size: 25px;
+    letter-spacing: normal;
+  }
+  .article-auther-name {
+    font-size: 20px;
+    letter-spacing: normal;
+  }
+  .article-category {
+    font-size: 15px;
+    font-weight: 400;
+    opacity: 0.9;
+    letter-spacing: normal;
+  }
+  .articles-sub-id-hero-container {
+    width: 100%;
+    height: fit-content;
+  }
+  .articles-sub-id-hero-text-container {
+    top: 20vh;
+  }
+  .articles-sub-id-img-title-container {
+    padding: 10vh 10vw;
+  }
+  .articles-sub-id-text-container {
+    padding: 2vh 10vw;
+  }
+  .articles-sub-id-audio-container {
+    flex-direction: column;
+  }
+  .audio-player-article {
+    width: 100%;
+  }
+  .articles-share-icon-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .articles-sub-id-text {
+    font-size: 15px;
+  }
+  .share-btn-outer-container {
+    width: 100%;
+  }
+  .articles-share-icon {
+    width: 100%;
+  }
+}

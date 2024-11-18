@@ -1,0 +1,212 @@
+/* styles/CookieConsent.module.css */
+.cookieConsent {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    color: black;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-align: center;
+    border-radius: 8px;
+    width: 40rem;
+  }
+  
+  .buttonContainer {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-around; /* Space buttons evenly */
+  }
+  
+  .acceptButton, .declineButton, .settingsButton {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .acceptButton {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+  
+  .declineButton {
+    background-color: #f44336; /* Red */
+    color: white;
+  }
+  
+  .settingsButton {
+    background-color: #008CBA; /* Blue */
+    color: white;
+  }
+
+  .cookieModalSettingsContainer{
+    width: 30%;
+    background-color: white;
+    display: flex;
+    padding: 2rem 1rem;
+  }
+  .cookieModalInnerContainer{
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid wheat;
+    padding: 1rem;
+    border-radius: 4px;
+    justify-content: space-between;
+
+  }
+  .cookieModalInnerText{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    
+  }
+  .cookieModalSwitchContainer{
+    display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  }
+
+  .buttonContainer2 {
+    display: flex;
+    justify-content: space-around; /* Space buttons evenly */
+    gap : 1rem ;
+  }
+
+  .acceptButton2 {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: 1px solid wheat;
+    border-radius: 4px;
+    width: 7rem;
+    height: 5vh;
+    cursor: pointer;
+  }
+  
+  .declineButton2 {
+    background-color: #f44336; /* Red */
+    color: white;
+    border: 1px solid wheat;
+    border-radius: 4px;
+    width: 7rem;
+    height: 5vh;
+    cursor: pointer;
+  }
+  
+  .settingsButton2 {
+    background-color: #008CBA; /* Blue */
+    color: white;
+    border: 1px solid wheat;
+    border-radius: 4px;
+    width: 7rem;
+    height: 5vh;
+    cursor: pointer;
+  }
+
+  .cookieModalOuterContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: space-evenly;
+
+  }
+
+  .cookieModalLogoContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .cookieClearIcon{
+    cursor: pointer;
+  }
+  .cookieLogoImg{
+    width: 4rem;
+    height: 3rem;
+  
+  }
+
+  .CookieWeValue{
+    font-size: 20px;
+}
+
+.CookieSinceWe{
+  font-size: 14px;
+}
+  
+  @media screen and (max-width: 600px) {
+  
+    .cookieConsent{
+      width: 20rem;
+      height: 26vh;
+    }
+    
+    .CookieWeValue{
+        font-size: 14px;
+    }
+    .CookieSinceWe{
+      font-size: 10px;
+    }
+ 
+    .buttonContainer {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-around; /* Space buttons evenly */
+    }
+    
+    .acceptButton, .declineButton, .settingsButton {
+      padding: 7px 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 10px;
+    }
+    .cookieModalSettingsContainer{
+      width: 70%;
+      background-color: white;
+      display: flex;
+      padding: 2rem 1rem;
+    }
+    .cookieModalOuterContainer{
+     width: 100%;
+    }
+
+    .cookieModalInnerContainer{
+      background-color: white;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      border: 1px solid wheat;
+      padding: 1rem;
+      border-radius: 4px;
+      justify-content: space-between;
+  
+    }
+    .acceptButton2 {     
+      border-radius: 4px;
+      width: 4rem;
+      height: 3vh;
+    }
+    
+    .declineButton2 {     
+      border-radius: 4px;
+      width: 4rem;
+      height: 3vh;
+    }
+    
+    .settingsButton2 {     
+      border-radius: 4px;
+      width: 7rem;
+      height: 3vh;
+    }
+  
+
+  }
+  

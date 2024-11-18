@@ -1,0 +1,765 @@
+/* Page Loader */
+.js .loading::before,
+.js .loading::after {
+  content: "";
+  position: fixed;
+  z-index: 1000;
+}
+
+.js .loading::before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-bg);
+}
+
+.js .loading::after {
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  margin: -30px 0 0 -30px;
+  border-radius: 50%;
+  opacity: 0.4;
+  background: var(--color-link);
+  animation: loaderAnim 0.7s linear infinite alternate forwards;
+}
+
+@keyframes loaderAnim {
+  to {
+    opacity: 1;
+    transform: scale3d(0.5, 0.5, 1);
+  }
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-link);
+  outline: none;
+  cursor: pointer;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+  outline: none;
+}
+
+/* Better focus styles from https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible */
+a:focus {
+  /* Provide a fallback style for browsers
+	 that don't support :focus-visible */
+  outline: none;
+  background: lightgrey;
+}
+
+a:focus:not(:focus-visible) {
+  /* Remove the focus indicator on mouse-focus for browsers
+	 that do support :focus-visible */
+  background: transparent;
+}
+
+a:focus-visible {
+  /* Draw a very noticeable focus style for
+	 keyboard-focus on browsers that do support
+	 :focus-visible */
+  outline: 2px solid red;
+  background: transparent;
+}
+
+.unbutton {
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.unbutton:focus {
+  outline: none;
+}
+
+body #cdawrap {
+  justify-self: start;
+}
+body {
+  background: #25769e;
+}
+
+.intro {
+  height: calc(100vh - 3rem);
+  text-align: center;
+  place-items: center;
+  display: grid;
+  margin-bottom: 30vh;
+  background: linear-gradient(0deg, transparent, var(--color-bg-alt));
+}
+
+.intro__title {
+  place-items: center;
+  margin: 0;
+  line-height: 0.9;
+  display: grid;
+  margin-top: 15vh;
+  font-weight: 400;
+}
+
+.intro__title-pre {
+  font-variation-settings: "wdth" 140, "wght" 300;
+  font-weight: 300;
+  font-size: clamp(2rem, 10vw, 5rem);
+  color: var(--color-title);
+}
+
+.intro__title-sub {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.intro__info {
+  max-width: 15ch;
+  opacity: 0.6;
+  margin-bottom: 4rem;
+  padding-bottom: 1rem;
+  line-height: 1.2;
+  position: relative;
+  align-self: end;
+}
+
+.intro__info::after {
+  content: "";
+  width: 1px;
+  height: 2rem;
+  background: #fff;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+}
+
+.content__title {
+  margin-top: 40vh;
+}
+
+.credits {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 50vh auto 0;
+}
+
+.card-wrap {
+  margin-top: 5vh;
+  display: grid;
+  grid-gap: 2rem;
+  grid-auto-flow: row;
+  grid-template-columns: 250px;
+}
+
+.card__image {
+  display: block;
+  border-radius: 7px;
+  background-size: cover;
+  background-position: 50% 50%;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  filter: brightness(0.8);
+}
+
+.content-wrap {
+  display: grid;
+  place-items: center;
+  grid-template-areas: "main";
+}
+
+.content {
+  grid-area: main;
+  display: grid;
+  place-items: center;
+  line-height: 1.2;
+  grid-template-areas: "content";
+}
+
+.content-wrap .content:first-child {
+  height: 100vh;
+}
+
+.content--layout {
+  grid-template-areas:
+    "title-up title-down"
+    "img img"
+    "text text";
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.content__img {
+  grid-area: img;
+  max-width: 50%;
+  height: auto;
+}
+
+.content__img--1 {
+  aspect-ratio: 896/1344;
+}
+
+.content__img--2 {
+  aspect-ratio: 1000/450;
+}
+
+.content__img--3 {
+  aspect-ratio: 1000/560;
+}
+
+.content__img--4 {
+  aspect-ratio: 1400/560;
+}
+
+.content__img--5 {
+  aspect-ratio: 680/920;
+}
+
+.content__img--6 {
+  aspect-ratio: 1;
+}
+
+.content__img--7 {
+  aspect-ratio: 1400/560;
+}
+
+.title-wrap {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  padding-top: 0.3em;
+  line-height: 0.525;
+  font-size: 1rem;
+  font-variation-settings: "wdth" 140, "wght" 150;
+  font-weight: 300;
+  position: relative;
+  z-index: 100;
+  text-indent: -0.1em;
+}
+
+.title--up {
+  grid-area: title-up;
+  font-style: italic;
+}
+
+.title--down {
+  grid-area: title-down;
+  font-variation-settings: "wdth" 140, "wght" 350;
+}
+
+.content__text {
+  grid-area: text;
+  text-transform: uppercase;
+  margin: 0;
+  opacity: 0.5;
+}
+
+.about-title-header-add-container {
+  width: 100%;
+  height: 50vh;
+  text-align: center;
+}
+
+.about-title-header-text {
+  font-size: 25px;
+}
+
+@media screen and (min-width: 53em) {
+  .title {
+    font-size: clamp(2rem, 15vw, 5rem);
+  }
+
+  .content-wrap:not(:last-child) {
+    margin-bottom: 30vmax;
+  }
+
+  .content__img {
+    max-width: none;
+  }
+
+  .content__img--1 {
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100vh;
+  }
+
+  .content__img--2 {
+    width: 60vw;
+  }
+
+  .content__img--3 {
+    width: 30vw;
+    align-self: center;
+  }
+
+  .content__img--4 {
+    width: 100%;
+    align-self: center;
+  }
+
+  .content__img--5 {
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100vh;
+  }
+
+  .content__img--6 {
+    max-width: 100%;
+  }
+
+  .content__img--7 {
+    width: 100%;
+    align-self: center;
+  }
+
+  .content--layout-1 {
+    grid-template-areas:
+      "title-up img ..."
+      "text img title-down";
+    grid-template-columns: 30% auto 30%;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 2vw;
+  }
+
+  .content--layout-2 {
+    grid-template-areas:
+      "title-up ..."
+      "img img"
+      "text title-down";
+    grid-template-columns: auto auto;
+    justify-content: center;
+    row-gap: 3vh;
+  }
+
+  .content--layout-3 {
+    grid-template-areas:
+      "title-up img title-down"
+      "text text text";
+    grid-template-columns: 20vw auto 20vw;
+    grid-template-rows: auto auto;
+    row-gap: 10vh;
+    column-gap: 2vw;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .content--layout-4 {
+    width: 100%;
+    grid-template-areas:
+      "title-up"
+      "img"
+      "title-down"
+      "text";
+    grid-template-columns: 1fr;
+    justify-content: center;
+    row-gap: 4vh;
+  }
+
+  .content--layout-5 {
+    grid-template-areas:
+      "title-up img ..."
+      "text img title-down";
+    grid-template-columns: 30% auto 30%;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 3vw;
+  }
+
+  .content--layout-6 {
+    grid-template-areas:
+      "title-up img"
+      "title-down img"
+      "text img";
+    grid-template-columns: 1fr 50%;
+    grid-template-rows: auto auto 1fr;
+    column-gap: 3vw;
+    row-gap: 0;
+  }
+
+  .content--layout-7 {
+    width: 100%;
+    grid-template-areas:
+      "img img img img"
+      "... text title-up ..."
+      "... text title-down ...";
+    grid-template-columns: 10vw 1fr 1fr 10vw;
+    justify-content: center;
+    row-gap: 4vh;
+  }
+
+  .title--up {
+    justify-self: end;
+    align-self: start;
+  }
+
+  .content--layout-2 .title--up {
+    justify-self: start;
+  }
+
+  .content--layout-3 .title--up {
+    justify-self: end;
+    align-self: center;
+  }
+
+  .content--layout-4 .title--up {
+    justify-self: center;
+  }
+
+  .content--layout-6 .title--up {
+    justify-self: end;
+    align-self: start;
+  }
+
+  .content--layout-7 .title--up {
+    justify-self: start;
+  }
+
+  .title--down {
+    justify-self: start;
+    align-self: end;
+  }
+
+  .content--layout-2 .title--down {
+    justify-self: end;
+    align-self: start;
+    margin-top: -0.1em;
+  }
+
+  .content--layout-3 .title--down {
+    align-self: center;
+  }
+
+  .content--layout-4 .title--down {
+    justify-self: center;
+  }
+
+  .content--layout-6 .title--down {
+    justify-self: end;
+    align-self: start;
+  }
+
+  .content--layout-2 .content__text {
+    align-self: start;
+    justify-self: start;
+    max-width: 400px;
+  }
+
+  .content--layout-1 .content__text {
+    max-width: 250px;
+    text-align: left;
+    justify-self: end;
+    align-self: end;
+  }
+
+  .content--layout-3 .content__text {
+    max-width: 590px;
+    text-align: justify;
+  }
+
+  .content--layout-4 .content__text {
+    text-align: center;
+    max-width: 400px;
+    margin-top: 3rem;
+  }
+
+  .content--layout-5 .content__text {
+    max-width: 250px;
+    text-align: right;
+    justify-self: end;
+    align-self: end;
+  }
+
+  .content--layout-6 .content__text {
+    max-width: 250px;
+    justify-self: end;
+    align-self: end;
+    text-align: right;
+  }
+
+  .content--layout-7 .content__text {
+    max-width: 250px;
+    justify-self: start;
+    align-self: start;
+    text-align: right;
+  }
+
+  .card-wrap {
+    grid-template-columns: repeat(3, 250px);
+  }
+
+  body #cdawrap {
+    justify-self: end;
+  }
+}
+
+/* stepper */
+.about-stepper-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  align-items: start;
+  height: fit-content;
+}
+
+.timeline-container {
+  display: flex;
+  width: 100%;
+  overflow: scroll;
+  flex-direction: row;
+  padding: 2vh 2vw;
+  padding-top: 30vh;
+  height: 100%;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  gap: 10vw;
+}
+
+.timeline-card-container {
+  display: flex;
+  flex-direction: column;
+  height: 200vh;
+  justify-content: space-between;
+}
+
+.timeline-year-container {
+  align-items: center;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  justify-content: space-between;
+  padding: 5vh 0;
+  height: 200vh;
+}
+
+.timeline-card {
+  background-color: white;
+  padding: 5vh 5vw;
+  border-radius: 4px;
+  color: black;
+  opacity: 0;
+  height: 30vh;
+  transform: translateY(-50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+
+  width: 50vw;
+}
+
+.timeline-card.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-year-container div {
+  transition: transform 0.5s ease, color 0.5s ease;
+}
+
+.timeline-year-container .active {
+  transform: scale(1.2);
+  color: rgb(89, 0, 255);
+}
+
+.timeline-year-container .not-active {
+  transform: scale(1);
+  color: white;
+}
+
+/* line with dots */
+
+/* Line with Dots container */
+.line-with-dots {
+  position: absolute;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  top: 15vh;
+  left: 45%;
+}
+
+/* Line styling */
+.line {
+  position: absolute;
+  width: 2px;
+  background-color: #ccc;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+/* Dot styling */
+.dot {
+  width: 15px;
+  height: 15px;
+  background-color: #3498db;
+  border-radius: 50%;
+  z-index: 1;
+  transition: all 0.5s ease; /* Smooth transition for spacing and color */
+  cursor: pointer;
+}
+
+/* Active Dot - Top */
+.dot.active-top {
+  background-color: #2ecc71; /* Change color when active */
+  transform: scale(1.2); /* Slightly increase size visually */
+  margin-bottom: 27.5vh;
+}
+
+.dot.active-mid {
+  background-color: #2ecc71; /* Change color when active */
+  transform: scale(1.2); /* Slightly increase size visually */
+  margin: 19vh 0;
+}
+
+.dot.active-bot {
+  background-color: #2ecc71; /* Change color when active */
+  transform: scale(1.2); /* Slightly increase size visually */
+  margin-top: 27.5vh;
+}
+/* years */
+/* Years List container */
+.years-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 100vh;
+  position: absolute;
+  top: 15vh;
+  left: 50%;
+}
+
+/* Year Item */
+.year-item {
+  position: relative;
+  transition: all 0.5s ease; /* Smooth transition for spacing and color */
+  cursor: pointer;
+}
+
+/* Active Year Item */
+.year-item.active-top {
+  font-weight: bold; /* Make the active year bold */
+  color: #2ecc71; /* Change color when active */
+  transform: scale(1.1); /* Slightly increase size of active year */
+  margin-bottom: 10vh; /* Special margin for the top active item */
+}
+
+/* Active Year Item - Middle */
+.year-item.active-mid {
+  font-weight: bold; /* Make the active year bold */
+  color: #2ecc71; /* Change color when active */
+  transform: scale(1.1); /* Slightly increase size of active year */
+  margin: 10vh 0; /* Special margin for the middle active item */
+}
+
+.year-item.active-bot {
+  font-weight: bold; /* Make the active year bold */
+  color: #2ecc71; /* Change color when active */
+  transform: scale(1.1); /* Slightly increase size of active year */
+  margin-top: 10vh; /* Special margin for the bottom active item */
+}
+
+.about-timeline-card-item {
+  background-color: white;
+  width: 20vw;
+  height: 20vh;
+  color: black;
+  border-radius: 4px;
+  padding: 1vw;
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.about-timeline-card-year {
+  font-size: 20px;
+  font-weight: bold;
+}
+.about-timeline-card-desc {
+  font-size: 10px;
+}
+
+/* timeline */
+.about-timeline-container {
+  position: relative;
+  margin: 10vh 0;
+  height: 150vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.about-title-header-add-text {
+  font-size: 30px;
+}
+
+@media (max-width: 600px) {
+  .about-title-header-add-container {
+    width: 100%;
+    text-align: center;
+    padding: 20vh 0 0 0;
+    height: fit-content;
+  }
+  .about-timeline-container {
+    height: 100vh;
+  }
+  .line-with-dots {
+    left: 15%;
+  }
+  .years-list {
+    left: 30%;
+    width: 50%;
+  }
+  .about-timeline-card-item {
+    width: 100%;
+  }
+  .about-timeline-card-year {
+    font-size: 15px;
+  }
+
+  /*  */
+  .about-step-text {
+    font-size: 20px;
+  }
+
+  .step-caption-text {
+    font-size: 16px;
+    padding: 0 1rem;
+  }
+  .content__text {
+    padding: 0 2rem;
+    font-size: 12px;
+    text-align: center;
+  }
+  .stepper-inner-container {
+    flex-direction: column;
+    padding: 0 5%;
+    gap: 1em;
+  }
+
+  .step-label.active-step .MuiStepLabel-label {
+    font-size: 30px;
+  }
+
+  .css-2seep-MuiStepLabel-label.Mui-completed {
+    font-size: 20px;
+  }
+
+  .MuiStepConnector-root {
+    border-top-width: 1px;
+  }
+}

@@ -1,0 +1,138 @@
+.add-content-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10%;
+  gap: 4vh;
+  margin: 10vh 15%;
+  border-radius: 5px;
+}
+.add-content-header {
+  font-size: 35px;
+}
+.add-content-inputs-container {
+  display: flex;
+  gap: 5vh;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.add-content-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  width: 45%;
+}
+.add-content-input-label {
+  font-size: 20px;
+}
+.add-content-input {
+  width: 100%;
+  padding: 2vh 1vw;
+  background: white;
+  color: rgb(26, 25, 25);
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  height: 36px;
+}
+.add-content-autocomplete {
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10vh;
+}
+
+.css-1tf4bsh-MuiFormLabel-root-MuiInputLabel-root {
+  color: white !important;
+}
+.css-1m822go-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+  color: white;
+}
+.css-n1500r-MuiAutocomplete-root .MuiOutlinedInput-root .MuiAutocomplete-input {
+  color: white;
+}
+.css-1m822go-MuiFormLabel-root-MuiInputLabel-root {
+  color: white;
+}
+
+.css-f3e7si-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+  color: white;
+}
+
+.css-f3e7si-MuiFormLabel-root-MuiInputLabel-root {
+  color: white;
+}
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+  border-color: white !important;
+}
+
+.css-l42tza-MuiFormLabel-root-MuiInputLabel-root {
+  color: white;
+}
+
+.add-content-input-container-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  width: 100%;
+}
+
+.add-content-input-container-3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-content-send-btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.add-content-send-btn {
+  background-color: white;
+  color: #25769e;
+  border-radius: 4px;
+  padding: 2vh 4vw;
+}
+
+.css-19p05vl-MuiButtonBase-root-MuiButton-root:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background-color: #25769e;
+  color: white;
+  border: 1px solid white;
+}
+
+.css-i4bv87-MuiSvgIcon-root {
+  color: white;
+}
+.add-content-subheader {
+  font-size: 15px;
+  text-align: justify;
+}
+
+@media screen and (max-width: 600px) {
+  .add-content-container {
+    margin: 15vh 0;
+  }
+  .add-content-header {
+    font-size: 25px;
+  }
+  .add-content-subheader {
+    font-size: 10px;
+  }
+  .add-content-inputs-container {
+    display: flex;
+    gap: 5vh;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .add-content-input-container {
+    width: 100%;
+  }
+  .add-content-send-btn {
+    padding: 2vh 15vw;
+  }
+}
