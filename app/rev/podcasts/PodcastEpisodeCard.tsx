@@ -40,7 +40,7 @@ const PodcastEpisodeCard = ({
   return (
     <div className="podcast-latest-card-container">
       <BottomAudioComponent
-        audio_title={audio_title}
+        audio_title={category}
         podcast_title={podcast_title}
         setOpen={setopen}
         open={open}

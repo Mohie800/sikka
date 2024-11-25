@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import goteh from "./GoetheWhiteLogo.svg";
 import FFO from "./FFO.png";
 import NXT from "./NXT.png";
@@ -15,12 +15,14 @@ import facebook from "./5279111_network_fb_social media_facebook_facebook logo_i
 import telegram from "./telegram-svgrepo-com.svg";
 import insta from "./5279112_camera_instagram_social media_instagram logo_icon.svg";
 import linkedin from "./5279114_linkedin_network_social network_linkedin logo_icon.svg";
+import CookiesSettingModal from "./CookiesSettingModal";
 
 const Footer = () => {
   const router = useRouter();
   const path = usePathname();
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
+  const [openCookie, setOpenCookie] = useState(false);
 
   if (path.includes("/articles-sub") || path == "/") {
     return null;
@@ -148,6 +150,12 @@ const Footer = () => {
               <a className="footer-link-item" href="/claim">
                 <Typo>Claim your copyright</Typo>
               </a>
+              <div
+                style={{ cursor: "pointer" }}
+                onClick={() => setOpenCookie(true)}
+              >
+                <Typo>cookies</Typo>
+              </div>
             </div>
             <div className="footer-links-container">
               <Typo style={{ textWrap: "nowrap", fontWeight: "bold" }}>
@@ -217,6 +225,7 @@ const Footer = () => {
           />
         </div>
       </div>
+      <CookiesSettingModal open={openCookie} setOpen={setOpenCookie} />
     </div>
   );
 };

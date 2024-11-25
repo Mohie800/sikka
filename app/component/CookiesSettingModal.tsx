@@ -25,7 +25,10 @@ export interface Preferences {
   functional: boolean;
 }
 
-const CookieConsent: React.FC = () => {
+const CookiesSettingModal: React.FC<{
+  open: boolean;
+  setOpen: (val: boolean) => void;
+}> = ({ open, setOpen }) => {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const [deviceSize, changeDeviceSize] = useState(0);
@@ -35,7 +38,6 @@ const CookieConsent: React.FC = () => {
   const [isMobilePhone, setisMobilePhone] = useState(false);
 
   const [isVisible, setIsVisible] = useState(false);
-  const [isSetting, setIsSetting] = useState(false);
   const [isCookieOpen, setisCookieOpen] = useState(true);
 
   const [preferences, setPreferences] = useState<Preferences>({
@@ -86,7 +88,7 @@ const CookieConsent: React.FC = () => {
     acceptFunctionalCookies(preferences);
     acceptAnalyticsCookies(preferences);
     acceptMarketingCookies(preferences);
-    setIsSetting(false);
+    setOpen(false);
   };
 
   const handleSwitchChange =
@@ -98,98 +100,21 @@ const CookieConsent: React.FC = () => {
   if (!isVisible) return null;
   console.log(isMobilePhone);
   return (
-    <div
-      className={isCookieOpen ? styles.cookieConsent : ""}
-      style={
-        currentLanguage == "ar"
-          ? { direction: "rtl", display: "flex" }
-          : { direction: "ltr" }
-      }
-    >
-      {isCookieOpen && (
-        <div>
-          <div
-            style={
-              currentLanguage == "ar"
-                ? { textAlign: "right" }
-                : { textAlign: "left" }
-            }
-          >
-            <Typo
-              textAlign={"left"}
-              className={styles.CookieWeValue}
-              fontWeight={600}
-              style={
-                currentLanguage == "ar"
-                  ? { direction: "rtl", display: "flex" }
-                  : { direction: "ltr" }
-              }
-            >
-              We value your privacy
-            </Typo>
-          </div>
-          {!isMobilePhone ? (
-            <div>
-              <br />
-              <br />
-            </div>
-          ) : null}
-          <Typo
-            className={styles.CookieSinceWe}
-            textAlign={currentLanguage == "ar" ? "right" : "left"}
-            style={
-              currentLanguage == "ar"
-                ? { direction: "rtl", display: "flex" }
-                : { direction: "ltr" }
-            }
-          >
-            Since we value your privacy, we ask for your permission to use these
-            tools. You can change or revoke your consent at any time in the
-            privacy settings.
-          </Typo>
-          {!isMobilePhone ? <br /> : null}
-          <a href="/privacy">
-            <Typo
-              className={styles.CookieSinceWe}
-              textAlign={"left"}
-              style={
-                currentLanguage == "ar"
-                  ? { direction: "rtl", display: "flex" }
-                  : { direction: "ltr" }
-              }
-            >
-              Privacy Policy
-            </Typo>
-          </a>
-          <br />
-          <div className={styles.buttonContainer}>
-            <button className={styles.acceptButton} onClick={handleAcceptAll}>
-              <Typo fontSize={isMobilePhone ? 12 : 15}>Accept All</Typo>
-            </button>
-            <button className={styles.declineButton} onClick={handleDecline}>
-              <Typo fontSize={isMobilePhone ? 12 : 15}>Decline</Typo>
-            </button>
-            <button
-              className={styles.settingsButton}
-              onClick={() => {
-                setIsSetting(true);
-                setisCookieOpen(false);
-              }}
-            >
-              <Typo fontSize={isMobilePhone ? 12 : 15}>Settings</Typo>
-            </button>
-          </div>
-        </div>
-      )}
+    <div>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
-        open={isSetting}
+        open={open}
         closeAfterTransition
         className={styles.cookieModalSettingsContainer}
         sx={{ overflowY: "auto" }}
+        style={
+          currentLanguage == "ar"
+            ? { direction: "rtl", display: "flex" }
+            : { direction: "ltr" }
+        }
       >
-        <Fade in={isSetting}>
+        <Fade in={open}>
           <div className={styles.cookieModalOuterContainer}>
             <div className={styles.cookieModalLogoContainer}>
               <Image
@@ -203,7 +128,7 @@ const CookieConsent: React.FC = () => {
                 className={styles.cookieClearIcon}
                 fontSize="large"
                 onClick={() => {
-                  setIsSetting(false);
+                  setOpen(false);
                   setisCookieOpen(true);
                 }}
               />
@@ -371,4 +296,4 @@ const CookieConsent: React.FC = () => {
   );
 };
 
-export default CookieConsent;
+export default CookiesSettingModal;
