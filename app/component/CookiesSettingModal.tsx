@@ -72,10 +72,12 @@ const CookiesSettingModal: React.FC<{
     acceptAnalyticsCookies(preferences);
     acceptMarketingCookies(preferences);
     setIsVisible(false);
+    setOpen(false);
   };
 
   const handleDecline = () => {
     setIsVisible(false);
+    setOpen(false);
   };
 
   const handleSettingsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -97,7 +99,7 @@ const CookiesSettingModal: React.FC<{
       setPreferences({ ...preferences, [name]: event.target.checked });
     };
 
-  if (!isVisible) return null;
+  // if (!isVisible) return null;
   console.log(isMobilePhone);
   return (
     <div>
@@ -276,15 +278,21 @@ const CookiesSettingModal: React.FC<{
               <button
                 className={styles.acceptButton2}
                 onClick={handleAcceptAll}
+                style={{ fontFamily: "inherit" }}
               >
                 <Typo fontSize={isMobilePhone ? 10 : 15}>Accept All</Typo>
               </button>
-              <button className={styles.declineButton2} onClick={handleDecline}>
+              <button
+                className={styles.declineButton2}
+                onClick={handleDecline}
+                style={{ fontFamily: "inherit" }}
+              >
                 <Typo fontSize={isMobilePhone ? 10 : 15}>Decline</Typo>
               </button>
               <button
                 className={styles.settingsButton2}
                 onClick={handleSaveSettings}
+                style={{ fontFamily: "inherit" }}
               >
                 <Typo fontSize={isMobilePhone ? 10 : 15}>Save Settings</Typo>
               </button>

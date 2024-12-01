@@ -5,6 +5,12 @@
   column-gap: 5rem;
 }
 
+.grid-no-gap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+
 body {
   background-color: white;
   background: white;

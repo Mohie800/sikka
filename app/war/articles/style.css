@@ -92,6 +92,11 @@ body {
   font-size: 3rem;
   font-weight: 600;
 }
+.grid-no-gap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
 
 @media screen and (max-width: 600px) {
   .articles-title-container {

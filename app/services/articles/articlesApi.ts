@@ -47,6 +47,18 @@ export const articlesApi = createApi({
         };
       },
     }),
+    getArticlesAll: builder.mutation<
+      ArticlesCatBySerialResponse,
+      { id: string }
+    >({
+      query: (data) => {
+        const { id } = data;
+        return {
+          url: GETARTICLESBYSERIAL ,
+          method: "GET",
+        };
+      },
+    }),
 
     getArticleDetail: builder.mutation<ArticlesDetailResponse, { id: string }>({
       query: (data) => {
@@ -64,5 +76,7 @@ export const {
   useGetArticlesCatMutation,
   useGetArticlesBySerialMutation,
   useGetArticleDetailMutation,
-  useGetArticlesCatWarMutation
+  useGetArticlesCatWarMutation,
+  useGetArticlesAllMutation,
+  
 } = articlesApi;

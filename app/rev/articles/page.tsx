@@ -53,7 +53,7 @@ const Page = () => {
         <Typo className="articles-title-text">Articles - Revolution</Typo>
       </div>
       <br />
-      <div className="grid">
+      <div className="grid-no-gap">
         {data.data.map((art, index) => {
           return (
             <div
