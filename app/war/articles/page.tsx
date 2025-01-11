@@ -69,7 +69,7 @@ const Page = () => {
               </Typo>
               <a
                 href={
-                  art.article_display_type_id
+                  art.article_display_type_id === 1
                     ? `/war/articles-sub/short-stories/${art.serial_link}`
                     : `/war/articles/${art.serial_link}`
                 }
